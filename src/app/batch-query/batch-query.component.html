@@ -1,0 +1,24 @@
+<div class="batch-query">
+    <!-- <p>batch-query works!</p> -->
+    <label for="batch-query-box">Batch Queries</label>
+    <textarea #batchQueryBox id="batch-query-box" cols="100" rows="10"></textarea>
+
+    <div>
+        <button type="button" class="Submit" title="Submit Queries"
+                (click)="submit(batchQueryBox)">Submit
+        </button>
+        <button type="button" class="Clear" title="Clear Queries"
+                (click)="clear(batchQueryBox)">Clear
+        </button>
+    </div>
+
+    <!-- <div *ngIf="queryTopicsArr">
+        <app-query-result [qt]="queryTopicsArr[0]"></app-query-result>
+        <app-query-result [qt]="queryTopicsArr[1]"></app-query-result>
+        <app-query-result [qt]="queryTopicsArr[2]"></app-query-result>
+    </div> -->
+    <div *ngFor="let queryTopic of queryTopicsArr">
+        <app-query-result [qt]="queryTopic"></app-query-result>
+    </div>
+
+</div>

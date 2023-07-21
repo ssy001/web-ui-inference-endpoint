@@ -1,0 +1,11 @@
+
+<div class="table">
+    <label for="query-box">Single Query</label>
+    <input #queryBox id="query-box" (input)="search(queryBox.value)" (keydown.enter)="getpred()" />
+
+    <ul class="topics">
+        <li *ngFor="let topicState of topic_states" [style]="getPredStyles(topicState)">
+            <span class="badge">{{topicState.topic}}</span>
+        </li>
+    </ul>
+</div>

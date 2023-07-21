@@ -1,0 +1,10 @@
+<!-- <p>query-result works!</p> -->
+<div *ngIf="qt" class="table">
+    <div class="query">{{qt.query}}</div>
+    <ul class="topics">
+    <!-- <ul class="topics" [style]="getUlStyles()"> -->
+        <li *ngFor="let result of predTopics" [style]="getPredStyles(result)">
+            <span class="badge">{{result.topic}}</span>
+        </li>
+    </ul>
+</div>
